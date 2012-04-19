@@ -1,3 +1,6 @@
+fs = require 'fs'
+path = require 'path'
+
 class Task
     constructor: (@task) ->
 
@@ -13,7 +16,9 @@ class Task
 
     # Retrieves an array of all the +project annotations.
     projects: () ->
-      @task.match(Task.projects_regex)
+      proj = @task.match(Task.projects_regex)
+      if proj
+        p.trim() for p in proj
 
     # Retrieves the date.
     date: () ->
@@ -62,6 +67,12 @@ class TodoList
           @list.push(new Task(item))
         else if (item instanceof Task)
           @list.push(item)
+    else if args.constructor.name is 'String'
+      @path = args
+      console.log @path
+      # Read list of files, create todos from them
+      lines = fs.readFileSync(path.join(@path, 'todo.txt')).toString().split '\n'
+      console.log lines
 
   path: () -> 
     @path
@@ -76,6 +87,15 @@ class TodoList
       if (ctx and context in ctx)
         l.push task
     l 
+
+  byProject: (project) ->
+    l = []
+    for task in @list
+      proj = task.projects()
+      if (proj and project in proj)
+        l.push task
+    l 
+
 
 root = exports ? this
 root.Task = Task
