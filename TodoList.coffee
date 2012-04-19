@@ -58,9 +58,9 @@ class Task
 
 class TodoList
   constructor: (args) ->
+    @list = []
     if args instanceof Array
       @path = null
-      @list = []
       
       for item in args
         if (item.constructor.name is 'String')
@@ -70,9 +70,15 @@ class TodoList
     else if args.constructor.name is 'String'
       @path = args
       console.log @path
+      # If path doesn't end in .txt, default to todo.txt
+      @path=path.join(@path,'todo.txt') if @path.substr(-4) isnt '.txt'
+
       # Read list of files, create todos from them
-      lines = fs.readFileSync(path.join(@path, 'todo.txt')).toString().split '\n'
-      console.log lines
+      lines = fs.readFileSync(@path).toString().split '\n'
+      for line in lines
+        if (line isnt '')
+          @list.push(new Task(line)) 
+
 
   path: () -> 
     @path
