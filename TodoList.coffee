@@ -27,6 +27,9 @@ class Task
       catch err
         return
 
+		# Returns text of task
+		toString: () ->
+			@task
     #
     overdue: () ->
       if @date is undefined
