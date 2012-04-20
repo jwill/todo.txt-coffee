@@ -26,11 +26,11 @@ class Task
         @task.match(Task.date_regex)[1]
       catch err
         return
-
-		# Returns text of task
-		toString: () ->
-			@task
-    #
+    
+    # Returns text of task
+    raw: ->
+      @task
+    
     overdue: () ->
       if @date is undefined
         return
