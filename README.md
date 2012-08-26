@@ -27,4 +27,7 @@
 		tasks.byPriority("A")
 		tasks.byProject('+project')
 
+## Build
 
+Uses coffee-toaster (https://github.com/serpentem/coffee-toaster) to
+package and compile CoffeeScript files into one JS minified JS file.
