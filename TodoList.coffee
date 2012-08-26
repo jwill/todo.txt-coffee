@@ -20,6 +20,10 @@ class Task
       if proj
         p.trim() for p in proj
 
+    # returns properties
+    properties: () ->
+      props = @task.match(Task.props_regex)
+
     # Retrieves the date.
     date: () ->
       try 
@@ -43,7 +47,8 @@ class Task
       @task.replace(Task.priority_regex, "").
         replace(Task.contexts_regex, "").
         replace(Task.date_regex, "").
-        replace(Task.projects_regex, "")
+        replace(Task.projects_regex, "").
+        replace(Task.property_regex, "")
 
     # TODO Compare to other task priority
 
@@ -58,6 +63,9 @@ class Task
 
     # The regex used to match dates.
     @date_regex = /([0-9]{4}-[0-9]{2}-[0-9]{2})/
+
+    # The regex used to match properties.
+    @props_regex = /\w+:\w+/g
 
 class TodoList
   constructor: (args) ->
