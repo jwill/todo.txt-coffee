@@ -22,7 +22,13 @@ class Task
 
     # returns properties
     properties: () ->
+      propsList = {}
       props = @task.match(Task.props_regex)
+      for p in props
+        [key, value] = p.split(':')
+        propsList[key] = value
+
+      return propsList
 
     # Retrieves the date.
     date: () ->
