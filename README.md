@@ -15,11 +15,11 @@
 ## Querying Individual Tasks
 
 		task.contexts() 	# => ['@context1', '@context2']	
-		task.date()				# => 'YYYY-MM-DD'
+		task.date()		# => 'YYYY-MM-DD'
 		task.priority()		# => "(A)"
 		task.projects()		# => ['+project', '+project2']
-		task.properties() # => ['due:1234', 'note:345']
-    task.raw()				# => "Full text of task"
+		task.properties() 	# => ['due:1234', 'note:345']
+    		task.raw()		# => "Full text of task"
 
 ## Querying Todo Lists
 		
