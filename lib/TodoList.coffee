@@ -14,7 +14,6 @@ class TodoList
           @list.push(item)
     else if args.constructor.name is 'String'
       @path = args
-      console.log @path
       # If path doesn't end in .txt, default to todo.txt
       @path=path.join(@path,'todo.txt') if @path.substr(-4) isnt '.txt'
 
