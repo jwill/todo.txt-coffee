@@ -1,18 +1,24 @@
 {
-	"name":"todotxt-coffee",
-	"version": "0.1.3",
-	"description": "Node.js module to use todo.txt",
-	"author": "James Williams <james.l.williams@gmail.com>",
-	"keywords": ["todotxt", "gtd"],
-	"licenses": [{
-	}],
-	"main": "TodoList.coffee",
-	"repository": {
-		"type": "git",
-		"url": "https://jwill@github.com/jwill/todo.txt-coffee.git"
-	},
-	"dependencies": {
-		"coffee-script":">=1.3.0"
-	},
-	"engines": { "node": ">=0.4.0"}
+  "name": "todotxt-coffee",
+  "version": "0.2.0",
+  "description": "Node.js module to use todo.txt",
+  "author": "James Williams <james.l.williams@gmail.com>",
+  "keywords": [
+    "todotxt",
+    "gtd"
+  ],
+  "licenses": [
+    {}
+  ],
+  "main": "TodoList.coffee",
+  "repository": {
+    "type": "git",
+    "url": "https://jwill@github.com/jwill/todo.txt-coffee.git"
+  },
+  "dependencies": {
+    "coffee-script": ">=1.3.0"
+  },
+  "engines": {
+    "node": ">=0.4.0"
+  }
 }
