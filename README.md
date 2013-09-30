@@ -4,13 +4,13 @@
 
 ## Loading Tasks 
 
-		{TodoList} = require ('todotxt-coffee')
+		{TodoList} = require ('todotxt-coffee/lib/TodoList')
 
 		# Instantiate list of Tasks
 		tasks = new TodoList(["(A) stop +p +c", "@c @b blah +c"])
 
 		# Load tasks from done file
-		tasks = new TodoList("/Users/jwilliams/Dropbox/todo/done.txt")
+		tasks = new TodoList("~/Dropbox/todo/done.txt")
 
 ## Querying Individual Tasks
 
@@ -27,7 +27,3 @@
 		tasks.byPriority("A")
 		tasks.byProject('+project')
 
-## Build
-
-Uses coffee-toaster (https://github.com/serpentem/coffee-toaster) to
-package and compile CoffeeScript files into one JS minified JS file.
