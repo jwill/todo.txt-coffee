@@ -1,5 +1,6 @@
 fs = require 'fs'
 path = require 'path'
+{Task} = require 'todotxt-coffee/lib/Task'
 
 class TodoList
   constructor: (args) ->
