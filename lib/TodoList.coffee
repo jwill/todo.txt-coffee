@@ -22,10 +22,10 @@ class TodoList
       lines = fs.readFileSync(@path).toString().split '\n'
       for line in lines
         if (line isnt '')
-          @list.push(new Task(line)) 
+          @list.push(new Task(line))
 
 
-  path: () -> 
+  path: () ->
     @path
 
   byPriority: (priority) ->
@@ -37,7 +37,7 @@ class TodoList
       ctx = task.contexts()
       if (ctx and context in ctx)
         l.push task
-    l 
+    l
 
   byProject: (project) ->
     l = []
@@ -45,7 +45,7 @@ class TodoList
       proj = task.projects()
       if (proj and project in proj)
         l.push task
-    l 
+    l
 
 
 root = exports ? this
